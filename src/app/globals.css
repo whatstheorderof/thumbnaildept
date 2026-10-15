@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+/*
+ * Thumbnail Department — restrained neutral production UI.
+ * The chrome stays black/white/grey; thumbnails supply the colour.
+ * Status tones are deliberately desaturated so they never compete with artwork.
+ */
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+html { color-scheme: dark; }
+
+:root {
+  --background: #0a0a0a;
+  --surface: #111111;
+  --surface-2: #171717;
+  --surface-3: #1f1f1f;
+  --border: #262626;
+  --border-strong: #3a3a3a;
+  --foreground: #ededed;
+  --muted: #8f8f8f;
+  --subtle: #5c5c5c;
+  --accent: #fafafa;
+  --accent-foreground: #0a0a0a;
+  --danger: #e5484d;
+  --ring: #a3a3a3;
+
+  --tone-neutral: #8f8f8f;
+  --tone-research: #6b9eff;
+  --tone-concept: #b18cff;
+  --tone-generate: #e38cff;
+  --tone-review: #f5b944;
+  --tone-revision: #ff8b5c;
+  --tone-approved: #4cc38a;
+  --tone-done: #d4d4d4;
+  --tone-cancelled: #e5484d;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-surface-3: var(--surface-3);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-subtle: var(--subtle);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-danger: var(--danger);
+  --color-ring: var(--ring);
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+}
+
+html, body { background: var(--background); color: var(--foreground); }
+body { font-family: var(--font-sans); -webkit-font-smoothing: antialiased; font-feature-settings: "cv11", "ss01"; }
+
+* { border-color: var(--border); }
+::selection { background: #ffffff22; }
+
+.label-caps { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); font-weight: 500; }
+.tabular { font-variant-numeric: tabular-nums; }
+
+/* thin scrollbars */
+* { scrollbar-width: thin; scrollbar-color: #2a2a2a transparent; }
